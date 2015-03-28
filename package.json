@@ -1,0 +1,60 @@
+{
+  "name": "global-flummox",
+  "version": "1.0.0",
+  "description": "Tasks for decoupling Flummox and FlummoxComponent dependencies into several standalone scripts, global variables FTW!",
+  "main": "index.js",
+  "browserify-shim": {
+    "react": "global:React",
+    "react/addons": "global:React",
+    "../Flux": "global:Flummox"
+  },
+  "temp": {
+    "eventemitter3": "global:EventEmitter3",
+    "object-assign": "global:ObjectAssignLib",
+    "uniqueid": "global:UniqueIdLib",
+    "flux": "global:FluxLib"
+  },
+  "scripts": {
+    "mkdir": "mkdir -p ./dist/www/js",
+    "js:react": "browserify -r 'react/addons' -t browserify-shim -o ./dist/www/js/react.js -s React",
+    "js:flummox": "browserify -e './node_modules/flummox/lib/Flux.js' -t browserify-shim -o ./dist/www/js/flummox.js -s Flummox",
+    "js:flummox-component": "browserify -e './node_modules/flummox/lib/addons/FluxComponent.js' -t browserify-shim -o ./dist/www/js/flummox-component.js -s FluxComponent",
+    "js": "npm run js:react && npm run js:flummox && npm run js:flummox-component",
+    "html": "babel-node . > dist/www/index.html",
+    "start": "http-server ./dist/www -p 7000",
+    "test": "npm run mkdir && npm run js && npm run html && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fczuardi/global-flummox.git"
+  },
+  "keywords": [
+    "flux",
+    "react",
+    "flumoxx",
+    "browserify",
+    "browserify-shim",
+    "unbundle",
+    "bundle",
+    "global",
+    "browser",
+    "script",
+    "tag",
+    "window"
+  ],
+  "author": "Fabricio C Zuardi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fczuardi/global-flummox/issues"
+  },
+  "homepage": "https://github.com/fczuardi/global-flummox",
+  "devDependencies": {
+    "babel": "^4.7.16",
+    "browserify": "^9.0.3",
+    "browserify-shim": "^3.8.3",
+    "flummox": "^3.2.1",
+    "http-server": "^0.8.0",
+    "js-beautify": "^1.5.5",
+    "react": "^0.13.1"
+  }
+}
