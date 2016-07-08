@@ -15,7 +15,7 @@
     "flux": "global:FluxLib"
   },
   "scripts": {
-    "mkdir": "./tasks/mkdir.js",
+    "mkdir": "node ./tasks/mkdir.js",
     "js:react": "browserify -r 'react/addons' -t browserify-shim -o ./dist/www/js/react.js -s React",
     "js:flummox": "browserify -e './node_modules/flummox/lib/Flux.js' -t browserify-shim -o ./dist/www/js/flummox.js -s Flummox",
     "js:flummox-component": "browserify -e './node_modules/flummox/lib/addons/FluxComponent.js' -t browserify-shim -o ./dist/www/js/flummox-component.js -s FluxComponent",
