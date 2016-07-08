@@ -15,7 +15,7 @@
     "flux": "global:FluxLib"
   },
   "scripts": {
-    "mkdir": "mkdir -p ./dist/www/js",
+    "mkdir": "./tasks/mkdir.js",
     "js:react": "browserify -r 'react/addons' -t browserify-shim -o ./dist/www/js/react.js -s React",
     "js:flummox": "browserify -e './node_modules/flummox/lib/Flux.js' -t browserify-shim -o ./dist/www/js/flummox.js -s Flummox",
     "js:flummox-component": "browserify -e './node_modules/flummox/lib/addons/FluxComponent.js' -t browserify-shim -o ./dist/www/js/flummox-component.js -s FluxComponent",
@@ -55,6 +55,7 @@
     "flummox": "^3.2.1",
     "http-server": "^0.8.0",
     "js-beautify": "^1.5.5",
-    "react": "^0.13.1"
+    "react": "^0.13.1",
+    "shelljs": "^0.7.0"
   }
 }
