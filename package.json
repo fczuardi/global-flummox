@@ -16,9 +16,9 @@
   },
   "scripts": {
     "mkdir": "node ./tasks/mkdir.js",
-    "js:react": "browserify -r 'react/addons' -t browserify-shim -o ./dist/www/js/react.js -s React",
-    "js:flummox": "browserify -e './node_modules/flummox/lib/Flux.js' -t browserify-shim -o ./dist/www/js/flummox.js -s Flummox",
-    "js:flummox-component": "browserify -e './node_modules/flummox/lib/addons/FluxComponent.js' -t browserify-shim -o ./dist/www/js/flummox-component.js -s FluxComponent",
+    "js:react": "browserify -r \"react/addons\" -t browserify-shim -o ./dist/www/js/react.js -s React",
+    "js:flummox": "browserify -e \"./node_modules/flummox/lib/Flux.js\" -t browserify-shim -o ./dist/www/js/flummox.js -s Flummox",
+    "js:flummox-component": "browserify -e \"./node_modules/flummox/lib/addons/FluxComponent.js\" -t browserify-shim -o ./dist/www/js/flummox-component.js -s FluxComponent",
     "js": "npm run js:react && npm run js:flummox && npm run js:flummox-component",
     "html": "babel-node . > dist/www/index.html",
     "start": "http-server ./dist/www -p 7000",
